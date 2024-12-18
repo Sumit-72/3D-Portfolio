@@ -25,8 +25,8 @@ const Projects = () => {
         </p>
 
         <div className="flex flex-wrap my-20 gap-16">
-          {projects.map((project) => (
-            <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden group hover:scale-105 hover:max-w-md transition-all duration-300 ease-in-out relative">
+          {projects.map((project,i) => (
+            <div key={i} className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden group hover:scale-105 hover:max-w-md transition-all duration-300 ease-in-out relative">
               <img
                 src={project.iconUrl}
                 alt="Card Image"

@@ -149,8 +149,8 @@ const About = () => {
         <h3 className="subhead-text">Achievements & Certifications</h3>
         <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
           <Marquee pauseOnHover className="[--duration:20s]">
-            {certificates.map((c) => (
-              <div className="card-container">
+            {certificates.map((c,i) => (
+              <div key={i} className="card-container">
                 <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-2 p-2 w-45 mx-auto">
                   <div className="relative group">
                     <img
