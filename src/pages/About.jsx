@@ -147,7 +147,7 @@ const About = () => {
         </div>
 
         <h3 className="subhead-text">Achievements & Certifications</h3>
-        <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+        <div className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
           <Marquee pauseOnHover className="[--duration:20s]">
             {certificates.map((c,i) => (
               <div key={i} className="card-container">
