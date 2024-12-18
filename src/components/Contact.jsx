@@ -8,7 +8,7 @@ const Contact = () => {
         containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[400px] lg:min-h-[200px]"
         className=""
       >
-      <div className="mx-auto my-4 p-6 border bg-gray-200 dark:bg-black border-gray-300 rounded-lg shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-105 hover:translate-x-2 hover:translate-y-2">
+      <div className=" w-auto h-auto mx-auto my-4 p-6 border bg-gray-200 dark:bg-black border-gray-300 rounded-lg shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-105 hover:translate-x-2 hover:translate-y-2">
         <p className="mb-2">
           <strong>Email:</strong>{" "}
           <a href="mailto:shekharsumit65@gmail.com">shekharsumit65@gmail.com</a>
