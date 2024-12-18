@@ -53,7 +53,7 @@ const About = () => {
           👋
         </h1>
 
-        <div className="mt-10 relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+        <div className="mt-10 relative flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
           <p className="text-center p-3">
             I am a passionate and versatile Tech Enthusiast committed to
             advancing in the field of computer science and beyond. With
