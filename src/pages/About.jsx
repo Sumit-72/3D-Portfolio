@@ -9,8 +9,8 @@ import "react-vertical-timeline-component/style.min.css";
 import { SparklesCore } from "../components/ui/sparkles";
 import Marquee from "@/components/ui/marquee";
 import Doc from "../components/Dock";
-import Contact from '../components/Contact'
-``;
+import Contact from '../components/Contact';
+
 const About = () => {
   return (
     <div className="dark:bg-black">
