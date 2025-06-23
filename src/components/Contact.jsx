@@ -23,11 +23,12 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "your_service_id",
-        "your_template_id",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "your_public_key"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
+
       .then(
         () => {
           setMessage("✅ Message sent successfully!");
