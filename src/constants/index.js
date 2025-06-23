@@ -1,4 +1,4 @@
-import { c,Ml, GenAi, Df,po,yc } from "../assets/images";
+import { c,Ml, GenAi, Df,po,yc, bito,rm } from "../assets/images";
 import {
     car,
     css,
@@ -46,12 +46,7 @@ export const skills = [
         imageUrl: javascript,
         name: "JavaScript",
         type: "Frontend",
-    },
-    {
-        imageUrl: express,
-        name: "Express",
-        type: "Backend",
-    },    
+    },  
     {
         imageUrl: nextjs,
         name: "Next.js",
@@ -99,7 +94,7 @@ export const experiences = [
         points: [
             "Collaborated with a team to create a bionic hand prototype.",
             "Used Python, OpenCV, and MediaPipe for real-time gesture recognition and flex sensors for detecting bending and motion.",
-            "Integrated NodeMCU for wireless control, achieving 90 % accuracy in diverse conditions.",
+            "Integrated NodeMCU for wireless control.",
             "With enhanced human-computer interaction, presented an innovative prosthetic solution.",
         ],
     },
@@ -120,18 +115,40 @@ export const socialLinks = [
 
 export const projects = [
     {
+        iconUrl: rm,
+        name: 'ReMaps',
+        description: [
+            'A campus navigation tool built for newcomers and visitors to easily find locations within the college.',
+            'Features Google Maps integration, a location directory, and smart search/filter options.',
+            'Tech: React, Google Maps API.'
+        ],
+        link: 'https://re-maps.vercel.app',
+        linktext: 'Explore ReMaps',
+        github: 'https://github.com/Sumit-72/ReMaps'
+    },
+    {
+        iconUrl: bito,
+        name: 'BitOverflow',
+        description: [
+            'A student community platform for sharing knowledge, finding events, and staying connected on campus.',
+            'Includes discussion forums, event updates, and secure authentication.',
+            'Tech: Next.js, Node.js, AppWrite, TailwindCSS'
+        ],
+        link: 'https://bit-overflow.vercel.app/',
+        linktext: 'Visit BitOverflow',
+        github: 'https://github.com/Sumit-72/BitOverflow'
+    },
+    {
         iconUrl: yc,
         name: 'YC Directory',
         description: [
             'Developed a comprehensive online directory for startups to seamlessly share, connect, and showcase their pitches effectively.',
             'Providing an intuitive and user-friendly environment, fostering collaboration and growth within the startup community.',
-            'Tech Stack :',
-            'Sanity for content management.',
-            'Next.jsfor server-side rendering and NextAuth for GitHub authentication',
-            'Sentry for error tracking & Shadcn UI for user interface components'
+            'Tech Stack: Next.js, Sanity, TailwindCSS, Sentry'
         ],
         link: 'https://yc-directory-4csj.vercel.app/',
-        linktext: 'Click Here'
+        linktext: 'Click Here',
+        github: 'https://github.com/Sumit-72/yc_Directory'
     },
     {
         iconUrl: po,
@@ -142,9 +159,11 @@ export const projects = [
             'Used: Three.js and React.'
         ],
         link: '/',
-        linktext: 'Click Here'
+        linktext: 'Click Here',
+        github: 'https://github.com/Sumit-72/3D-Portfolio'
     },
 ];
+
 
 export const certificates= [
     {

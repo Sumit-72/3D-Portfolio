@@ -9,7 +9,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { SparklesCore } from "../components/ui/sparkles";
 import Marquee from "@/components/ui/marquee";
 import Doc from "../components/Dock";
-import Contact from '../components/Contact';
+import Contact from "../components/Contact";
 
 const About = () => {
   return (
@@ -21,7 +21,7 @@ const About = () => {
           minSize={0.6}
           maxSize={1.4}
           particleDensity={100}
-          className="w-full h-full fixed top-0 left-0 z-0"
+          className="w-full h-full fixed top-0 left-0 z-0 pointer-events-none"
           particleColor="#ffffff"
         />
 
@@ -58,11 +58,10 @@ const About = () => {
             I am a passionate and versatile Tech Enthusiast committed to
             advancing in the field of computer science and beyond. With
             expertise in C++ and Python programming, I specialize in Web
-            development while also exploring the dynamic worlds of Android
-            development, Machine Learning and Artificial Intelligence.
-            Constantly striving for excellence, I embrace challenges and
-            innovate with a multidimensional approach to problem-solving and
-            technology.
+            development while also exploring the dynamic worlds of Machine
+            Learning and Artificial Intelligence.Constantly striving for
+            excellence, I embrace challenges and innovate with a
+            multidimensional approach to problem-solving and technology.
           </p>
           <BorderBeam size={450} duration={12} delay={9} borderWidth={2} />
         </div>
@@ -149,7 +148,7 @@ const About = () => {
         <h3 className="subhead-text">Achievements & Certifications</h3>
         <div className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
           <Marquee pauseOnHover className="[--duration:20s]">
-            {certificates.map((c,i) => (
+            {certificates.map((c, i) => (
               <div key={i} className="card-container">
                 <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-2 p-2 w-45 mx-auto">
                   <div className="relative group">
@@ -170,11 +169,12 @@ const About = () => {
             ))}
           </Marquee>
         </div>
-        
+
         <hr className="border-slate-200" />
-        
-        <h3 className="subhead-text mt-10">Contacts</h3>
-        <Contact />
+
+        <div className="mt-20">
+          <Contact />
+        </div>
 
         <Doc />
       </section>

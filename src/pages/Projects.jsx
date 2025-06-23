@@ -25,8 +25,11 @@ const Projects = () => {
         </p>
 
         <div className="flex flex-wrap my-20 gap-16">
-          {projects.map((project,i) => (
-            <div key={i} className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden group hover:scale-105 hover:max-w-md transition-all duration-300 ease-in-out relative">
+          {projects.map((project, i) => (
+            <div
+              key={i}
+              className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden group hover:scale-105 hover:max-w-md transition-all duration-300 ease-in-out relative"
+            >
               <img
                 src={project.iconUrl}
                 alt="Card Image"
@@ -46,18 +49,32 @@ const Projects = () => {
                   ))}
                 </ul>
 
-                <div className="mt-4">
+                <div className="mt-4 flex gap-4 items-center">
                   <a
                     href={project.link}
                     className="text-blue-500 p-3 hover:text-white font-medium transition-colors duration-300 hover:bg-slate-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {project.linktext}
                   </a>
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      className="text-gray-700 hover:text-white p-3 font-medium transition-colors duration-300 hover:bg-gray-800"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
+
 
         <hr className="border-slate-200" />
 

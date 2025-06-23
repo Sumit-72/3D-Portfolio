@@ -56,7 +56,7 @@ const links = [
     title: "HackerRank",
     icon: (
       <img 
-      src="https://media-exp1.licdn.com/dms/image/C4D0BAQFjiWOgmSVg3g/company-logo_200_200/0?e=2159024400&v=beta&t=6ylX0XZI4-3_aX5nXpNANj-RuurjOTC-WQMo23zZB58"
+      src="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png"
       className=" text-neutral-500 dark:text-neutral-300  p-0 m-0 "
       />
     ),
