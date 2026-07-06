@@ -201,9 +201,9 @@ export const projects = [
             'Leveraged transfer learning with the MobileNet architecture, achieving over 90% accuracy on diverse and complex image inputs.',
             'Deployed the model via Streamlit, enabling real-time breed predictions through an interactive and user-friendly web interface.'
         ],
-        link: 'https://dog-breed-id.streamlit.app',
+        link: 'https://dog-vision72.streamlit.app/',
         linktext: 'Explore Dog Vision',
-        github: 'https://github.com/Sumit-72/Dog-Breed-Identification'
+        github: 'https://github.com/Sumit-72/Dog-Vision'
     },
     {
         iconUrl: dequeue,
@@ -214,9 +214,9 @@ export const projects = [
             'Integrated Scanbot SDK for 99% barcode scanning accuracy and Razorpay for secure payments.',
             'Implemented a scalable backend with Node.js, Express, and MongoDB, supporting 10,000+ products with RESTful APIs, CRUD operations, real-time inventory tracking, and an AI-based recommendation engine using Hugging Face Inference API.'
         ],
-        link: 'https://dequeue-checkout.vercel.app',
+        link: 'https://dequeue-scanbot.vercel.app/',
         linktext: 'Visit Dequeue',
-        github: 'https://github.com/Sumit-72/Dequeue'
+        github: 'https://github.com/Psquare31/Dequeue-Scanbot'
     },
     {
         iconUrl: bito,
