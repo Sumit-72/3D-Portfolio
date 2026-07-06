@@ -2,7 +2,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { experiences, skills, certificates } from "../constants";
+import { experiences, skills, certificates, fundamentals } from "../constants";
 import { TypeAnimation } from "react-type-animation";
 import { BorderBeam } from "@/components/ui/border-beam";
 import "react-vertical-timeline-component/style.min.css";
@@ -12,6 +12,24 @@ import Doc from "../components/Dock";
 import Contact from "../components/Contact";
 
 const About = () => {
+  const categoryOrder = ["Language", "Framework", "Library", "Cloud & DevOps", "Tool"];
+  const categoryTitles = {
+    "Language": "Programming Languages",
+    "Framework": "Frameworks",
+    "Library": "Libraries & AI Tools",
+    "Cloud & DevOps": "Cloud & DevOps",
+    "Tool": "Developer Tools"
+  };
+
+  const skillCategories = skills.reduce((acc, skill) => {
+    const category = skill.type;
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(skill);
+    return acc;
+  }, {});
+
   return (
     <div className="dark:bg-black">
       <section className="max-container">
@@ -35,12 +53,11 @@ const About = () => {
           <br />
           <TypeAnimation
             sequence={[
-              // Same substring at the start will only be typed out once, initially
               "Tech Enthusiast",
-              1000, // wait 1s before replacing "Mice" with "Hamsters"
+              1000,
               "Full Stack Web Developer",
               1000,
-              "ML enthusiast",
+              "ML Enthusiast",
               1000,
               "Competitive Programmer",
               1000,
@@ -53,15 +70,9 @@ const About = () => {
           👋
         </h1>
 
-        <div className="mt-10 relative flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-          <p className="text-center p-3">
-            I am a passionate and versatile Tech Enthusiast committed to
-            advancing in the field of computer science and beyond. With
-            expertise in C++ and Python programming, I specialize in Web
-            development while also exploring the dynamic worlds of Machine
-            Learning and Artificial Intelligence.Constantly striving for
-            excellence, I embrace challenges and innovate with a
-            multidimensional approach to problem-solving and technology.
+        <div className="mt-10 relative flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-xl border bg-background/50 backdrop-blur-md shadow-xl transition-all hover:shadow-2xl">
+          <p className="text-center p-6 text-slate-700 dark:text-slate-300 leading-relaxed text-lg z-10">
+            I am a B.Tech Computer Science and Engineering student at <strong className="text-blue-600 dark:text-blue-400">Birla Institute of Technology, Mesra</strong> (CGPA 8.64) and a highly motivated software engineer. Recently, I worked as an <strong className="text-blue-600 dark:text-blue-400">SDE Intern at Axis Bank</strong>, where I optimized credit card automation pipelines, automated document OCR using Java/Spring Boot, and built custom AI agents using Copilot Studio. I specialize in full-stack development and machine learning, constantly solving complex algorithmic problems (350+ LeetCode solved) and building scalable, user-centric web applications.
           </p>
           <BorderBeam size={450} duration={12} delay={9} borderWidth={2} />
         </div>
@@ -69,32 +80,65 @@ const About = () => {
         <div className="py-10 flex flex-col">
           <h3 className="subhead-text">My Skills</h3>
 
-          <div className="mt-16 flex flex-wrap gap-12">
-            {skills.map((skill) => (
-              <div className="block-container w-20 h-20" key={skill.name}>
-                <div className="btn-back rounded-xl" />
-                <div className="btn-front rounded-xl flex justify-center items-center">
-                  <img
-                    src={skill.imageUrl}
-                    alt={skill.name}
-                    className="w-1/2 h-1/2 object-contain"
-                  />
+          <div className="mt-8 space-y-10 relative z-10">
+            {categoryOrder.map((category) => {
+              const categorySkills = skillCategories[category];
+              if (!categorySkills || categorySkills.length === 0) return null;
+
+              return (
+                <div key={category} className="flex flex-col">
+                  <h4 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4 border-b pb-2 border-slate-200/50">
+                    {categoryTitles[category]}
+                  </h4>
+                  <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
+                    {categorySkills.map((skill) => (
+                      <div className="block-container w-24 h-24" key={skill.name}>
+                        <div className="btn-back rounded-xl bg-slate-200 dark:bg-slate-800" />
+                        <div className="btn-front rounded-xl flex flex-col justify-center items-center p-2 text-center">
+                          <img
+                            src={skill.imageUrl}
+                            alt={skill.name}
+                            className="w-10 h-10 object-contain mb-1"
+                          />
+                          <p className="text-[10px] font-bold text-slate-800 dark:text-slate-200 truncate w-full px-1">
+                            {skill.name}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              );
+            })}
+
+            {/* Core Fundamentals Section */}
+            <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 backdrop-blur-md">
+              <h4 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+                Core Fundamentals & Concepts
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {fundamentals.map((fundamental, idx) => (
+                  <span
+                    key={idx}
+                    className="px-4 py-2 rounded-full text-sm font-medium bg-white/40 dark:bg-white/5 border border-white/20 text-slate-800 dark:text-slate-200 shadow-sm transition-all hover:scale-105 hover:bg-white/60 hover:shadow-md cursor-default"
+                  >
+                    {fundamental}
+                  </span>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
 
         <div className="py-16">
           <h3 className="subhead-text">Work Experience.</h3>
-          <div className="mt-5 flex flex-col gap-3 text-slate-500">
+          <div className="mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-400">
             <p>
-              I've worked with all sorts of companies, leveling up my skills and
-              teaming up with smart people. Here's the rundown:
+              My professional journey and internships, working with cross-functional teams to build automated enterprise workflows, AI assistants, and robotics prototypes:
             </p>
           </div>
 
-          <div className="mt-12 flex">
+          <div className="mt-12 flex relative z-10">
             <VerticalTimeline>
               {experiences.map((experience, index) => (
                 <VerticalTimelineElement
@@ -133,7 +177,7 @@ const About = () => {
                     {experience.points.map((point, index) => (
                       <li
                         key={`experience-point-${index}`}
-                        className="text-black-500/50 font-normal pl-1 text-sm"
+                        className="text-black-500/50 font-normal pl-1 text-sm text-justify"
                       >
                         {point}
                       </li>
@@ -146,7 +190,7 @@ const About = () => {
         </div>
 
         <h3 className="subhead-text">Achievements & Certifications</h3>
-        <div className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+        <div className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl relative z-10 mt-10">
           <Marquee pauseOnHover className="[--duration:20s]">
             {certificates.map((c, i) => (
               <div key={i} className="card-container">
@@ -155,9 +199,9 @@ const About = () => {
                     <img
                       src={c.img}
                       alt="img"
-                      className="rounded-lg w-full h-[300px] "
+                      className="rounded-lg w-full h-[300px] object-cover"
                     />
-                    <p className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                    <p className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity text-center p-3 text-sm">
                       {c.detail}
                     </p>
                   </div>
@@ -170,9 +214,9 @@ const About = () => {
           </Marquee>
         </div>
 
-        <hr className="border-slate-200" />
+        <hr className="border-slate-200 mt-20" />
 
-        <div className="mt-20">
+        <div className="mt-20 relative z-10">
           <Contact />
         </div>
 

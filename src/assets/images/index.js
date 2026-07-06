@@ -8,6 +8,8 @@ import po from './po.png'
 import yc from './yc.png'
 import bito from './bito.png'
 import rm from './rm.png'
+import dog_breed from './dog_breed.png'
+import dequeue from './dequeue.png'
 
 export {
     hero,
@@ -19,5 +21,7 @@ export {
     Ml,
     GenAi,
     po,
-    yc
+    yc,
+    dog_breed,
+    dequeue
 }
